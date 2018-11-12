@@ -19,4 +19,10 @@ public class ToDoController {
 	public Iterable<ToDoEvent> getToDoEvent() {
 		return toDoService.getAllnonDoneEvents();
 	}
+	
+	@GetMapping
+	@RequestMapping("/hello")
+	public String getHello() {
+		return "hello world";
+	}
 }
