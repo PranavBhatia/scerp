@@ -10,7 +10,7 @@ import com.scerp.salesdepartment.service.ToDoService;
 
 
 @RestController
-@RequestMapping("/todo")
+@RequestMapping("/")
 public class ToDoController {
 	@Autowired
 	private ToDoService toDoService;
@@ -18,5 +18,11 @@ public class ToDoController {
 	@GetMapping
 	public Iterable<ToDoEvent> getToDoEvent() {
 		return toDoService.getAllnonDoneEvents();
+	}
+	
+	@GetMapping
+	@RequestMapping("/hello")
+	public String getHello() {
+		return "hello prodcut, we did it!";
 	}
 }

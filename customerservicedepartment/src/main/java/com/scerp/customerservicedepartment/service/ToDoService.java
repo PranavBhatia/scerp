@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.scerp.customerservicedepartment.domain.ToDoEvent;
+import com.scerp.customerservicedepartment.dto.Product;
 import com.scerp.customerservicedepartment.repository.ToDoRepository;
 
 @Service
