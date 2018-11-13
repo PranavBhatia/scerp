@@ -23,6 +23,7 @@ public class ToDoController {
 	@GetMapping
 	@RequestMapping("/hello")
 	public String getHello() {
-		return "hello prodcut, we did it!";
+		
+		return "hello prodcut, we just did inter project communication!";
 	}
 }

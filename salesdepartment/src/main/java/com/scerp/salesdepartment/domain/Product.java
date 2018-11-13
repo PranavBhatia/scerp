@@ -16,6 +16,15 @@ public class Product {
 	private Long id;
 	private String productName;
 	private String price;
+	private Long quantity;
+
+	public Long getQuantity() {
+		return quantity;
+	}
+
+	public void setQuantity(Long quantity) {
+		this.quantity = quantity;
+	}
 
 	public Long getId() {
 		return id;
