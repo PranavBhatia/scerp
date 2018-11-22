@@ -1,4 +1,4 @@
-package com.scerp.administrationdepartment.domain;
+package com.scerp.customerservicedepartment.domain;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -7,21 +7,18 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "employee")
-public class EmployeeEntity {
-
+@Table(name = "customer")
+public class CustomerEntity {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+	private  Long id;
 	
 	private String name;
-	private String username;
 	private String password;
 	private String phone_number;
-	private String employeetype;
+	private  String email;
 	private String address;
-	private String designation;
-	private String sin_number;
 	
 	public Long getId() {
 		return id;
@@ -35,12 +32,6 @@ public class EmployeeEntity {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getUsername() {
-		return username;
-	}
-	public void setUsername(String username) {
-		this.username = username;
-	}
 	public String getPassword() {
 		return password;
 	}
@@ -53,11 +44,11 @@ public class EmployeeEntity {
 	public void setPhone_number(String phone_number) {
 		this.phone_number = phone_number;
 	}
-	public String getEmployeetype() {
-		return employeetype;
+	public String getEmail() {
+		return email;
 	}
-	public void setEmployeetype(String employeetype) {
-		this.employeetype = employeetype;
+	public void setEmail(String email) {
+		this.email = email;
 	}
 	public String getAddress() {
 		return address;
@@ -65,18 +56,5 @@ public class EmployeeEntity {
 	public void setAddress(String address) {
 		this.address = address;
 	}
-	public String getDesignation() {
-		return designation;
-	}
-	public void setDesignation(String designation) {
-		this.designation = designation;
-	}
-	public String getSin_number() {
-		return sin_number;
-	}
-	public void setSin_number(String sin_number) {
-		this.sin_number = sin_number;
-	}
-	
 	
 }

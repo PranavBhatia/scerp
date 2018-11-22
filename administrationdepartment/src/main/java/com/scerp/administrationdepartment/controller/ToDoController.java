@@ -40,13 +40,25 @@ public class ToDoController {
 				.getForEntity("http://localhost:8081/customer/todo/hello", String.class);
 		return responseEntity.getBody();
 	}
+	
+	@GetMapping
+	@RequestMapping("/getProducts")
+	public String getProducts() {
+		ResponseEntity<String> responseEntity = new RestTemplate()
+				.getForEntity("http://localhost:8083/sales/getProducts", String.class);
+		return responseEntity.getBody();
+	}
 
 	@RequestMapping(value = "/addEmplpoyee", method = RequestMethod.POST)
 	public String addEmployee(@RequestBody EmployeeEntity employeeInfo) {
-		System.out.println(employeeInfo.getFirstName());
-		System.out.println(employeeInfo.getLastName());
-		System.out.println(employeeInfo.getPassword());
+		System.out.println(employeeInfo.getName());
 		System.out.println(employeeInfo.getUsername());
+		System.out.println(employeeInfo.getPassword());
+		System.out.println(employeeInfo.getPhone_number());
+		System.out.println(employeeInfo.getEmployeetype());
+		System.out.println(employeeInfo.getAddress());
+		System.out.println(employeeInfo.getDesignation());
+		System.out.println(employeeInfo.getSin_number());
 		employeeRepository.save(employeeInfo);
 		return "Employee added";
 	}
@@ -62,8 +74,7 @@ public class ToDoController {
 
 	@RequestMapping(value = "/deleteEmployee", method = RequestMethod.POST)
 	public String deleteEmployee(@RequestBody EmployeeEntity employeeInfo) {
-		System.out.println(employeeInfo.getFirstName());
-		System.out.println(employeeInfo.getLastName());
+		System.out.println(employeeInfo.getName());
 		System.out.println(employeeInfo.getPassword());
 		System.out.println(employeeInfo.getUsername());
 		employeeRepository.deleteByUsername(employeeInfo.getUsername());

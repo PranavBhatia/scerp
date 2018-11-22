@@ -10,6 +10,5 @@ public interface EmployeeRepository extends CrudRepository<EmployeeEntity, Long>
 	@Modifying
 	@Transactional
 	void deleteByUsername(String firstName);
-
 	EmployeeEntity findByUsername(String username);
 }
